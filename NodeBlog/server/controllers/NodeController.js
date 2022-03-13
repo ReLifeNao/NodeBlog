@@ -7,7 +7,9 @@ exports.homepage = async(req,res) => {
         
         const limitNumber = 5;
         const categories = await Category.find({}).limit(limitNumber);
-        res.render('index',{title:'Node Blog - Homepage', categories});
+        const latest = await Article.find({}).sort({_id:-1}).limit(limitNumber);
+        const article = { latest };
+        res.render('index',{title:'Node Blog - Homepage', categories, article });
     }
     catch(error){
         res.status(500).send({messages: error.message || "Error ocurred"});
@@ -81,7 +83,7 @@ insertDymmyCategoryData();*/
 
 
 
-
+/*
 async function insertDymmyArticleData(){
     try{
         await Article.insertMany([{
@@ -101,4 +103,4 @@ async function insertDymmyArticleData(){
     }
 }
 
-insertDymmyArticleData();
+insertDymmyArticleData();*/
