@@ -20,28 +20,45 @@
 
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
 
+
     <% if(categories != '') { %>
-        <% categories.forEach(function(category, index){ %>
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/<%- category.image  %>" alt="<%- category.name  %>" loading="lazy">
-        </div>
-        <div class="pt-1"><%- category.name  %></div>
-    </a>
-    <% }) %>
+      <% categories.forEach(function(category, index) { %>
+        <a href="/categories/<%- category.name %>" class="col text-center category__link">
+          <div class="category__img shadow">
+            <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%- category.name %></div>
+        </a>
+      <% }) %>
     <% } %>
+  
+    <a href="/categories" class="col text-center category__link">
+      <div class="category__img shadow">
+        <img src="img/view-all.jpg" alt="View All Categories" loading="lazy">
+      </div>
+      <div class="pt-1">View All</div>
+    </a>
+  
+  </div>
+  <!-- Categories End -->
 
-<a href="/recipe/#" class="col text-center category__link">
-    <div class="category__img category__img--large shadow">
-        <img src="img/view-all.jpg" alt=""loading="lazy">
+
+
+<!-- Latest Start -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Latest Recipes</h2>
+      <a href="/explore-latest" class="ms-auto">View More</a>
     </div>
-    <div class="pt-1">Picture1</div>
-</a>
-</div>
-
-
-
-<!--    Latest End -->
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+  
+      
+    </div> 
+  
+  </section>
+  <!-- Latest End -->
 
 <!--    Submit section -->
 

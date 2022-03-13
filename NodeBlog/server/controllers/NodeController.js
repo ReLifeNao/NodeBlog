@@ -1,9 +1,8 @@
 require('../models/database');
 const Category = require('../models/Category');
+const Article = require('../models/Article');
 
 exports.homepage = async(req,res) => {
-
-
     try{
         
         const limitNumber = 5;
@@ -14,12 +13,35 @@ exports.homepage = async(req,res) => {
         res.status(500).send({messages: error.message || "Error ocurred"});
 
     }
-
-
-
-
-    
 }
+
+
+/**
+ * GET /categories
+ * Categories
+ */
+exports.exploreCategories = async(req,res) => {
+    try{
+        
+        const limitNumber = 20;
+        const categories = await Category.find({}).limit(limitNumber);
+        res.render('categories',{title:'Node Blog - Categories', categories});
+    }
+    catch(error){
+        res.status(500).send({messages: error.message || "Error ocurred"});
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 /*
 async function insertDymmyCategoryData(){
@@ -56,3 +78,27 @@ async function insertDymmyCategoryData(){
 }
 
 insertDymmyCategoryData();*/
+
+
+
+
+async function insertDymmyArticleData(){
+    try{
+        await Article.insertMany([{
+            "name": "Recipe Name Goes Here",
+         "description": `Recipe Description Goes Here`,
+         "email": "recipeemail@raddy.co.uk",
+         "keywords": [
+           "1 level teaspoon baking powder",
+           "1 level teaspoon cayenne pepper",
+         "1 level teaspoon hot smoked paprika",
+         ],
+        "category": "Thai", 
+         "image": "southern-friend-chicken.jpg"
+        }]);
+    } catch(error){
+        console.log('errx',+error)
+    }
+}
+
+insertDymmyArticleData();
