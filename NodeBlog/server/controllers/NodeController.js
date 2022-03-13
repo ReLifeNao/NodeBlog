@@ -8,7 +8,9 @@ exports.homepage = async(req,res) => {
         const limitNumber = 5;
         const categories = await Category.find({}).limit(limitNumber);
         const latest = await Article.find({}).sort({_id:-1}).limit(limitNumber);
-        const article = { latest };
+        const Thai2 = await Article.find({ 'category': 'Thai2' }).limit(limitNumber);
+        const Thai3 = await Article.find({ 'category': 'Thai3' }).limit(limitNumber);
+        const article = { latest,Thai2,Thai3 };
         res.render('index',{title:'Node Blog - Homepage', categories, article });
     }
     catch(error){
@@ -34,6 +36,42 @@ exports.exploreCategories = async(req,res) => {
 
     }
 }
+
+
+/**
+ * GET /articleiD
+ * Article
+ */
+ exports.exploreArticle = async(req,res) => {
+    try{
+        
+        let ArticleId = req.params.id;
+
+        const Articles = await Article.findById(ArticleId);
+        res.render('article',{title:'Node Blog - Article', Articles});
+    }
+    catch(error){
+        res.status(500).send({messages: error.message || "Error ocurred"});
+
+    }
+}
+
+/**
+ * GET /categories/:id
+ * Categories By Id
+*/
+exports.exploreCategoriesById = async(req, res) => { 
+    try {
+      let categoryId = req.params.id;
+      
+      const limitNumber = 20;
+      const categoryById = await Article.find({ 'category': categoryId }).limit(limitNumber);
+      res.render('categories', { title: 'Cooking Blog - Categoreis', categoryById } );
+    } catch (error) {
+      res.satus(500).send({message: error.message || "Error Occured" });
+    }
+  } 
+
 
 
 
