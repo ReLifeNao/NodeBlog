@@ -1,0 +1,16 @@
+<h1 class="pb-4">Explore Random</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+  <% if(Articles != '') { %>
+   
+    <a href="/Article/<%= Articles._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img src="/uploads/<%= Articles.image %>" alt="<%= Articles.name %>" loading="lazy">
+      </div>
+      <div class="pt-1"><%= Articles.name %></div>
+    </a>
+  
+  <% } else { %>
+    <p>No items found.</p>
+  <% } %> 
+</div>

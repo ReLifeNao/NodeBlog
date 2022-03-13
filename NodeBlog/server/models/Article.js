@@ -14,7 +14,7 @@ const articleSchema = new mongoose.Schema({
     },
     keywords : {
         type: Array,
-        required: 'This fild is required.'
+        
     },
     category : {
         type: String,
@@ -27,4 +27,8 @@ const articleSchema = new mongoose.Schema({
     },
 });
 
+
+articleSchema.index({ name: 'text', description: 'text' });
+// WildCard Indexing
+//recipeSchema.index({ "$**" : 'text' });
 module.exports = mongoose.model('Article', articleSchema);
