@@ -18,7 +18,7 @@ const articleSchema = new mongoose.Schema({
     },
     category : {
         type: String,
-        enum: ['Thai', 'Thai2', 'Thai3'],
+        enum: ['Noticia', 'Tecnologia', 'Recuerdo'],
         required: 'This fild is required.'
     },
     image : {

@@ -71,17 +71,17 @@
   </section>
   <!-- Latest End -->
 
-  <!-- Thai2 Start -->
+  <!-- Tecnologia Start -->
 
 <section class="pb-4 pt-4">
   <div class="d-flex mb-2 align-items-center">
-    <h2>Categoria THAI</h2>
-    <a href="/categories/Thai3" class="ms-auto">View More</a>
+    <h2>Categoria Tecnologia</h2>
+    <a href="/categories/Tecnologia" class="ms-auto">View More</a>
   </div>
 
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <% if(article.Thai2 != '') { %>
-      <% article.Thai2.forEach(function(article, index){ %>
+    <% if(article.Tecnologia != '') { %>
+      <% article.Tecnologia.forEach(function(article, index){ %>
       <a href="/article/<%= article._id %>" class="col text-center category__link">
         <div class="category__img category__img--large shadow">
           <img src="/uploads/<%= article.image %>" alt="<%= article.name %>" loading="lazy">
@@ -96,19 +96,19 @@
   </div> 
 
 </section>
-<!-- Thai2 End -->
+<!-- Tecnologia End -->
 
-<!-- Thai3 Start -->
+<!-- Noticia Start -->
 
 <section class="pb-4 pt-4">
   <div class="d-flex mb-2 align-items-center">
-    <h2>Categoria THAI3</h2>
-    <a href="/categories/Thai3" class="ms-auto">View More</a>
+    <h2>Categoria Noticias</h2>
+    <a href="/categories/Noticia" class="ms-auto">View More</a>
   </div>
 
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <% if(article.Thai3 != '') { %>
-      <% article.Thai3.forEach(function(article, index){ %>
+    <% if(article.Noticia != '') { %>
+      <% article.Noticia.forEach(function(article, index){ %>
       <a href="/article/<%= article._id %>" class="col text-center category__link">
         <div class="category__img category__img--large shadow">
           <img src="/uploads/<%= article.image %>" alt="<%= article.name %>" loading="lazy">
@@ -123,7 +123,7 @@
   </div> 
 
 </section>
-<!-- Thai3 End -->
+<!-- Noticia End -->
 
 <!--    Submit section -->
 
@@ -135,7 +135,7 @@
         Publish anything you want here.
     </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href="/submit" class="btn btn-primary btn-dark btn-lg">Submit</a>
+        <a href="/submit-article" class="btn btn-primary btn-dark btn-lg">Submit</a>
     </div>
 </div>
 </section>

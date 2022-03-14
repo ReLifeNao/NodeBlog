@@ -8,9 +8,9 @@ exports.homepage = async(req,res) => {
         const limitNumber = 5;
         const categories = await Category.find({}).limit(limitNumber);
         const latest = await Article.find({}).sort({_id:-1}).limit(limitNumber);
-        const Thai2 = await Article.find({ 'category': 'Thai2' }).limit(limitNumber);
-        const Thai3 = await Article.find({ 'category': 'Thai3' }).limit(limitNumber);
-        const article = { latest,Thai2,Thai3 };
+        const Tecnologia = await Article.find({ 'category': 'Tecnologia' }).limit(limitNumber);
+        const Noticia = await Article.find({ 'category': 'Noticia' }).limit(limitNumber);
+        const article = { latest,Tecnologia,Noticia };
         res.render('index',{title:'Node Blog - Homepage', categories, article });
     }
     catch(error){
@@ -162,7 +162,7 @@ exports.exploreRandom = async(req, res) => {
       
       await newRecipe.save();
   
-      req.flash('infoSubmit', 'Recipe has been added.')
+      req.flash('infoSubmit', 'Post has been added.')
       res.redirect('/submit-article');
     } catch (error) {
       // res.json(error);
