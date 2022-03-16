@@ -23,4 +23,8 @@ Formulario submit:
 
 Boton search:
 
+<<<<<<< HEAD
 ![Search](https://user-images.githubusercontent.com/57734334/158514595-df11dd20-1179-488f-8f1b-3513e1ecfc57.png)
+=======
+![Search](https://user-images.githubusercontent.com/57734334/158514595-df11dd20-1179-488f-8f1b-3513e1ecfc57.png)
+>>>>>>> f8edf2888eae6865b33129b2039c66f863ea3f69
